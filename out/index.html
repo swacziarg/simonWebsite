@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My First Website</title>
+	<style>
+		/* Style the header */
+		header {
+			background-color: #333;
+			color: white;
+			text-align: center;
+			padding: 20px;
+		}
+		/* Style the footer */
+		footer {
+			background-color: #333;
+			color: white;
+			text-align: center;
+			padding: 20px;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 60px;
+		}
+		/* Style the main content area */
+		main {
+			padding: 20px;
+			margin-bottom: 60px;
+		}
+		/* Style the pong game */
+		#game {
+			position: relative;
+			height: 300px;
+			width: 500px;
+			margin: 0 auto;
+		}
+		#ball {
+			position: absolute;
+			top: 140px;
+			left: 240px;
+			height: 20px;
+			width: 20px;
+			background-color: red;
+			border-radius: 50%;
+			animation: moveBall linear 1s infinite;
+		}
+		#paddleLeft {
+			position: absolute;
+			top: 120px;
+			left: 20px;
+			height: 60px;
+			width: 10px;
+			background-color: white;
+		}
+		#paddleRight {
+			position: absolute;
+			top: 120px;
+			right: 20px;
+			height: 60px;
+			width: 10px;
+			background-color: white;
+		}
+		/* Define the animations */
+		@keyframes moveBall {
+			from {
+				top: 140px;
+				left: 240px;
+			}
+			to {
+				top: 280px;
+				left: 240px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>My First Website</h1>
+	</header>
+	<main>
+		<h2>Pong Game</h2>
+		<div id="game">
+			<div id="paddleLeft"></div>
+			<div id="paddleRight"></div>
+			<div id="ball"></div>
+		</div>
+		<script>
+			let ball = document.getElementById("ball");
+			let paddleLeft = document.getElementById("paddleLeft");
+			let paddleRight = document.getElementById("paddleRight");
+			let ballSpeedX = 5;
+			let ballSpeedY = 5;
+			document.addEventListener("keydown", function(event) {
+				if (event.code == "ArrowUp") {
+					paddleRight.style.top = parseInt(paddleRight.style.top) - 10 + "px";
+				} else if (event.code == "ArrowDown") {
+					paddleRight.style.top = parseInt(paddleRight.style.top) + 10 + "px";
+				}
+			});
+			function updateBall() {
+				let ballX = parseInt(ball.style.left);
+				let ballY = parseInt(ball.style.top);
+				let paddleLeftY = parseInt(paddleLeft.style.top);
+				let paddleRightY = parseInt(paddleRight.style.top);
+				if (ballY < 0 || ballY > 280) {
+					ballSpeedY = -ballSpeedY;
+				}
+				if (ballX < 30 && ballX > 20 && ballY > paddleLeftY && ballY < paddleLeftY + 60) {
+				ballSpeedX = -ballSpeedX;
+			}
+			if (ballX > 460 && ballX < 470 && ballY > paddleRightY && ballY < paddleRightY + 60) {
+				ballSpeedX = -ballSpeedX;
+			}
+			ball.style.left = ballX + ballSpeedX + "px";
+			ball.style.top = ballY + ballSpeedY + "px";
+		}
+		setInterval(updateBall, 20);
+	</script>
+	<h2>My Blog</h2>
+	<div>
+		<h3>My First Blog Post</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ligula vel lacus convallis lacinia. Ut facilisis bibendum eros, ut efficitur odio ultricies ac. Morbi vestibulum enim vitae nibh lacinia, at gravida est iaculis. Sed sodales bibendum dolor vel rhoncus. Nunc malesuada tincidunt lectus a imperdiet. Fusce et ultricies mauris, a tempor ipsum.</p>
+	</div>
+</main>
+<footer>
+	<p>Copyright © My First Website.
+	All rights reserved.</p>
+</footer>
+
