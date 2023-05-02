@@ -1,33 +1,53 @@
-/* Profile 1: Light theme */
+/* Tron Theme */
 
 body {
-    background-color: #f2f2f2;
-    color: #333;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-}
-
-nav ul li a {
-    color: #fff;
-}
-
-nav ul li a:hover {
-    color: #2196F3;
-}
-
-main {
-    border: 1px solid #ccc;
-    padding: 20px;
-}
-
-h2 {
-    border-bottom: 1px solid #ccc;
-}
-
-img {
-    border: 5px solid #fff;
-    margin-right: 10px;
-}
+    background-color: #060606;
+    color: #a9e6ff;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  header {
+    background-color: #040404;
+    border-bottom: 2px solid #a9e6ff;
+  }
+  
+  nav ul li a {
+    color: #a9e6ff;
+  }
+  
+  nav ul li a:hover {
+    color: #4cb8ff;
+  }
+  
+  h1, h2, h3 {
+    color: #a9e6ff;
+  }
+  
+  main {
+    background-color: #0c0c0c;
+  }
+  
+  div {
+    border: 1px solid #a9e6ff;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    border: 2px solid #a9e6ff;
+  }
+  
+  button {
+    background-color: #a9e6ff;
+    color: #060606;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #4cb8ff;
+  }
+  

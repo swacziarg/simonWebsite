@@ -1,38 +1,33 @@
-/* Profile 2: Dark theme */
-
-:root {
-    --background-color: #1c1c1c;
-    --text-color: #fff;
-}
-
-body.profile-2 {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-header.profile-2 {
-    background-color: #333;
-    color: var(--text-color);
-}
-
-nav.profile-2 ul li a {
-    color: var(--text-color);
-}
-
-nav.profile-2 ul li a:hover {
-    color: #2196F3;
-}
-
-main.profile-2 {
-    border: 1px solid #ccc;
-    padding: 20px;
-}
-
-h2.profile-2 {
-    border-bottom: 1px solid #ccc;
-}
-
-img.profile-2 {
-    border: 5px solid var(--text-color);
-    margin-right: 10px;
-}
+body {
+    background-color: black;
+    color: lime;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  h1, h2, h3 {
+    color: lime;
+    text-align: center;
+  }
+  
+  a {
+    color: lime;
+  }
+  
+  a:hover {
+    color: white;
+  }
+  
+  button {
+    background-color: black;
+    color: lime;
+    border: 2px solid lime;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: lime;
+    color: black;
+  }
+  
