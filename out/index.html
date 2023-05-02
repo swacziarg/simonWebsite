@@ -2,128 +2,115 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>My First Website</title>
+	<title>My Website</title>
 	<style>
-		/* Style the header */
+		/* Profile 1: Light theme */
+
+		body {
+			background-color: #f2f2f2;
+			color: #333;
+		}
+
 		header {
 			background-color: #333;
-			color: white;
-			text-align: center;
-			padding: 20px;
+			color: #fff;
 		}
-		/* Style the footer */
-		footer {
-			background-color: #333;
-			color: white;
-			text-align: center;
-			padding: 20px;
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 60px;
+
+		nav ul li a {
+			color: #fff;
 		}
-		/* Style the main content area */
+
+		nav ul li a:hover {
+			color: #2196F3;
+		}
+
 		main {
+			border: 1px solid #ccc;
 			padding: 20px;
-			margin-bottom: 60px;
 		}
-		/* Style the pong game */
-		#game {
-			position: relative;
-			height: 300px;
-			width: 500px;
-			margin: 0 auto;
+
+		h2 {
+			border-bottom: 1px solid #ccc;
 		}
-		#ball {
-			position: absolute;
-			top: 140px;
-			left: 240px;
-			height: 20px;
-			width: 20px;
-			background-color: red;
-			border-radius: 50%;
-			animation: moveBall linear 1s infinite;
+
+		img {
+			border: 5px solid #fff;
+			margin-right: 10px;
 		}
-		#paddleLeft {
-			position: absolute;
-			top: 120px;
-			left: 20px;
-			height: 60px;
-			width: 10px;
-			background-color: white;
+
+		/* Profile 2: Dark theme */
+
+		:root {
+			--background-color: #1c1c1c;
+			--text-color: #fff;
 		}
-		#paddleRight {
-			position: absolute;
-			top: 120px;
-			right: 20px;
-			height: 60px;
-			width: 10px;
-			background-color: white;
+
+		body.profile-2 {
+			background-color: var(--background-color);
+			color: var(--text-color);
 		}
-		/* Define the animations */
-		@keyframes moveBall {
-			from {
-				top: 140px;
-				left: 240px;
-			}
-			to {
-				top: 280px;
-				left: 240px;
-			}
+
+		header.profile-2 {
+			background-color: #333;
+			color: var(--text-color);
+		}
+
+		nav.profile-2 ul li a {
+			color: var(--text-color);
+		}
+
+		nav.profile-2 ul li a:hover {
+			color: #2196F3;
+		}
+
+		main.profile-2 {
+			border: 1px solid #ccc;
+			padding: 20px;
+		}
+
+		h2.profile-2 {
+			border-bottom: 1px solid #ccc;
+		}
+
+		img.profile-2 {
+			border: 5px solid var(--text-color);
+			margin-right: 10px;
 		}
 	</style>
 </head>
 <body>
 	<header>
-		<h1>My First Website</h1>
+		<h1>My Website</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
 	</header>
 	<main>
-		<h2>Pong Game</h2>
-		<div id="game">
-			<div id="paddleLeft"></div>
-			<div id="paddleRight"></div>
-			<div id="ball"></div>
+		<h2>My Blog</h2>
+		<div>
+			<h3>My First Blog Post</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ligula vel lacus convallis lacinia. Ut facilisis bibendum eros, ut efficitur odio ultricies ac. Morbi vestibulum enim vitae nibh lacinia, at gravida est iaculis. Sed sodales bibendum dolor vel rhoncus. Nunc malesuada tincidunt lectus a imperdiet. Fusce et ultricies mauris, a tempor ipsum.</p>
 		</div>
-		<script>
-			let ball = document.getElementById("ball");
-			let paddleLeft = document.getElementById("paddleLeft");
-			let paddleRight = document.getElementById("paddleRight");
-			let ballSpeedX = 5;
-			let ballSpeedY = 5;
-			document.addEventListener("keydown", function(event) {
-				if (event.code == "ArrowUp") {
-					paddleRight.style.top = parseInt(paddleRight.style.top) - 10 + "px";
-				} else if (event.code == "ArrowDown") {
-					paddleRight.style.top = parseInt(paddleRight.style.top) + 10 + "px";
-				}
-			});
-			function updateBall() {
-				let ballX = parseInt(ball.style.left);
-				let ballY = parseInt(ball.style.top);
-				let paddleLeftY = parseInt(paddleLeft.style.top);
-				let paddleRightY = parseInt(paddleRight.style.top);
-				if (ballY < 0 || ballY > 280) {
-					ballSpeedY = -ballSpeedY;
-				}
-				if (ballX < 30 && ballX > 20 && ballY > paddleLeftY && ballY < paddleLeftY + 60) {
-				ballSpeedX = -ballSpeedX;
-			}
-			if (ballX > 460 && ballX < 470 && ballY > paddleRightY && ballY < paddleRightY + 60) {
-				ballSpeedX = -ballSpeedX;
-			}
-			ball.style.left = ballX + ballSpeedX + "px";
-			ball.style.top = ballY + ballSpeedY + "px";
-		}
-		setInterval(updateBall, 20);
-	</script>
-	<h2>My Blog</h2>
-	<div>
-		<h3>My First Blog Post</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ligula vel lacus convallis lacinia. Ut facilisis bibendum eros, ut efficitur odio ultricies ac. Morbi vestibulum enim vitae nibh lacinia, at gravida est iaculis. Sed sodales bibendum dolor vel rhoncus. Nunc malesuada tincidunt lectus a imperdiet. Fusce et ultricies mauris, a tempor ipsum.</p>
-	</div>
-</main>
-<footer>
-	<p>Copyright © My First Website.
-	All rights reserved.</p>
-</footer>
-
+		<div>
+			<h3>My Second Blog Post</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ligula vel lacus convallis lacinia. Ut facilisis bibendum eros, ut efficitur odio ultricies ac. Morbi vestibulum enim vitae nibh lacinia, at gravida est iaculis. Sed sodales bibendum dolor vel rhoncus. Nunc malesuada tincidunt lectus a imperdiet. Fusce et ultricies mauris, a tempor ipsum.</p>
+		</div>
+		<h2>My Gallery</h2>
+		<div>
+			<img src="image1.jpg" alt="Image 1">
+			<img src="image2.jpg" alt="Image 2">
+			<img src="image3.jpg" alt="Image 3">
+		</div>
+	</main>
+	<footer>
+		<p>Copyright © My Website.
+		All rights reserved.</p>
+	</footer>
+</body>
+</html>
