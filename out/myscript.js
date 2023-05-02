@@ -6,11 +6,11 @@ var style2 = document.getElementById("pagestyle2");
 // add event listener to button
 styleBtn.addEventListener("click", function() {
   // check which stylesheet is currently active and switch to the other one
-  if (style1.getAttribute("href") === "style1.css") {
-    style1.setAttribute("href", "style2.css");
-    style2.setAttribute("href", "style1.css");
-  } else {
-    style1.setAttribute("href", "style1.css");
-    style2.setAttribute("href", "style2.css");
-  }
+    if (style1.getAttribute("href") === "style1.css") {
+        style1.setAttribute("href", "style2.css");
+        style2.setAttribute("href", "style1.css");
+    } else {
+        style1.setAttribute("href", "style1.css");
+        style2.setAttribute("href", "style2.css");
+    }
 });
