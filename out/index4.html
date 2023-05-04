@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Information</title>
+    <style>
+      /* CSS styles for layout and spacing */
+      .contact-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+      }
+      .bio {
+        max-width: 600px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .image {
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body onmousemove="shufflePhoneNumber()">
+    <div class="contact-container">
+      <h1>Contact Information</h1>
+      <img src="https://media.licdn.com/dms/image/D5603AQGedD_VUd8o8w/profile-displayphoto-shrink_800_800/0/1673925063789?e=2147483647&v=beta&t=VLgEGFO-XGpk0R3bV3yt9lizWsJVDPMQG5jKOHnYHDE" alt="My Photo" class="image">
+      <p><strong>Email:</strong> <a href="mailto:swacziarg@gmail.com">swacziarg@gmail.com</a></p>
+      <p><strong>Phone:</strong> <span id="phone-number">424-349-8808</span></p>
+      <div class="bio">
+        <p>This is a short bio about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed turpis id ipsum hendrerit ultricies vitae sit amet metus. In hac habitasse platea dictumst. Suspendisse potenti. Sed efficitur blandit nisl eu finibus. Sed venenatis sapien nec tristique tempor. Etiam at libero lacinia, rhoncus dolor non, molestie risus.</p>
+      </div>
+    </div>
+    <script>
+      // JavaScript code to shuffle phone number digits on mousemove
+      function shufflePhoneNumber() {
+        const phoneNumber = document.getElementById('phone-number');
+        const digits = phoneNumber.innerText.split('');
+        for (let i = 0; i < digits.length; i++) {
+          if (digits[i] !== '-') {
+            digits[i] = Math.floor(Math.random() * 10).toString();
+          }
+        }
+        phoneNumber.innerText = digits.join('');
+      }
+    </script>
+  </body>
+</html>
