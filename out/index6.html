@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funky HTML Page</title>
+	<style>
+		body {
+			background-color: hotpink;
+			color: green;
+			font-family: 'Comic Sans MS', cursive, sans-serif;
+			text-align: center;
+			overflow: hidden;
+		}
+		h1 {
+			font-size: 4rem;
+			margin-top: 5rem;
+			transition: transform 0.5s ease, color 0.5s ease;
+		}
+		p {
+			font-size: 2rem;
+			margin: 3rem 0;
+			transition: transform 0.5s ease, color 0.5s ease;
+		}
+		.button {
+			background-color: limegreen;
+			color: white;
+			font-size: 1.5rem;
+			padding: 1rem;
+			border: none;
+			border-radius: 0.5rem;
+			cursor: pointer;
+			transition: background-color 0.5s ease;
+		}
+		.button:hover {
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to the Funky HTML Page!</h1>
+	<p>Click the button below to see some funky animation.</p>
+	<button class="button" onclick="funkyAnimation()">FUNKY!</button>
+	<script>
+		function funkyAnimation() {
+			const body = document.querySelector('body');
+			const h1 = document.querySelector('h1');
+			const p = document.querySelector('p');
+			const button = document.querySelector('.button');
+			const width = window.innerWidth;
+			const height = window.innerHeight;
+			const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'];
+			let interval;
+			let counter = 0;
+			interval = setInterval(() => {
+				h1.style.transform = `translate(${Math.random() * width}px, ${Math.random() * height}px)`;
+				p.style.transform = `translate(${Math.random() * width}px, ${Math.random() * height}px)`;
+				button.style.transform = `translate(${Math.random() * width}px, ${Math.random() * height}px)`;
+				body.style.backgroundColor = colors[counter];
+				h1.style.color = colors[(counter + 1) % colors.length];
+				p.style.color = colors[(counter + 2) % colors.length];
+				counter = (counter + 1) % colors.length;
+			}, 100);
+			setTimeout(() => {
+				clearInterval(interval);
+				h1.style.transform = 'none';
+				p.style.transform = 'none';
+				button.style.transform = 'none';
+				body.style.backgroundColor = 'hotpink';
+				h1.style.color = 'green';
+				p.style.color = 'green';
+			}, 5000);
+		}
+	</script>
+</body>
+</html>
