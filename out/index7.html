@@ -1,74 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simon Says Game</title>
-    <style>
-      /* Style the game board and buttons */
-      #game-board {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 50px auto;
-        width: 400px;
-      }
-
-      .button {
-        width: 150px;
-        height: 150px;
-        margin: 10px;
-        border: none;
-        border-radius: 50%;
-        font-size: 24px;
-        font-weight: bold;
-        text-transform: uppercase;
-        cursor: pointer;
-        outline: none;
-      }
-
-      /* Style the buttons with different colors */
-      .button.red {
-        background-color: red;
-        color: white;
-      }
-
-      .button.green {
-        background-color: green;
-        color: white;
-      }
-
-      .button.blue {
-        background-color: blue;
-        color: white;
-      }
-
-      .button.yellow {
-        background-color: yellow;
-        color: black;
-      }
-
-      .button.purple {
-        background-color: purple;
-        color: white;
-      }
-
-      .button.orange {
-        background-color: orange;
-        color: white;
-      }
-    </style>
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="simonstyle.css">
   </head>
   <body>
-    <div id="game-board">
-      <button class="button red" id="red"></button>
-      <button class="button green" id="green"></button>
-      <button class="button blue" id="blue"></button>
-      <button class="button yellow" id="yellow"></button>
-      <button class="button purple" id="purple"></button>
-      <button class="button orange" id="orange"></button>
+    <div id="game-container">
+      <div id="circle-container">
+        <div class="circle" style="background-color: red;"></div>
+        <div class="circle" style="background-color: blue;"></div>
+        <div class="circle" style="background-color: green;"></div>
+        <div class="circle" style="background-color: yellow;"></div>
+        <div class="circle" style="background-color: purple;"></div>
+        <div class="circle" style="background-color: orange;"></div>
+      </div>
+      <button id="start-button">Start</button>
+      <div id="score">Score: 0</div>
     </div>
-
-    <!-- Include the JavaScript file for the game logic -->
     <script src="simonscript.js"></script>
   </body>
 </html>
